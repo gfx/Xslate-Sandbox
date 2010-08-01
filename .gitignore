@@ -1,0 +1,14 @@
+.*
+!.gitignore
+!.shipit
+Makefile*
+!Makefile.PL
+*blib
+META.yml
+MYMETA.yml
+inc/
+MANIFEST
+*.out
+*.bak
+nytprof*
+cover_db*

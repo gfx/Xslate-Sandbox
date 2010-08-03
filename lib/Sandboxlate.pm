@@ -40,6 +40,7 @@ sub dispatch_api {
 
     my %response;
     try {
+        alarm(1);
         my $syntax = lc($req->param('syntax') || 'Kolon');
         if ($syntax !~ /^$supported_renderer_re$/) {
             die "Syntax $syntax is not supported";

@@ -58,6 +58,7 @@ sub dispatch_api {
         $response{ result }  = $result;
         $response{ time }    = tv_interval($t0, $t1);
     } catch {
+        s/ at \s+ \S+ \s+ line \s+ \d+ //xmsg;
         $response{ message } = "An error occurred: $_";
         $response{ status } = 0;
     };
@@ -147,23 +148,27 @@ __DATA__
 </head>
 <body>
     <form action="/api" id="TestForm">
+    <p>
         templte:<br />
-        <textarea name="template" id="template">Hello, [% thing %]</textarea>
+        <textarea name="template" id="template" cols="80">Hello, <: $lang :> world!</textarea>
         <br />
-        vars(in json):<br />
-        <textarea name="vars" id="vars">{"thing":"world"}</textarea>
+        vars(in JSON):<br />
+        <textarea name="vars" id="vars" cols="80">{"lang":"Xslate"}</textarea>
         <br />
         syntax:<br />
         <select name="syntax" id="syntax">
-            <option name="TTerse">TTerse</option>
             <option name="Kolon">Kolon</option>
+            <option name="TTerse">TTerse</option>
         </select>
         <br />
         <input type="submit" value="send" />
     </form>
     <hr />
     result:<br />
+    </p>
     <div id="result" style="bordor: solid 1px black"></div>
+    <hr />
+    <address><a href="http://xslate.org">http://xslate.org</a></address>
 </body>
 </html>
 

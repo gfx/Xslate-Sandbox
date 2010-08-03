@@ -15,6 +15,9 @@ use Try::Tiny;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Section::Simple qw/get_data_section/;
 
+my $logfile;
+$logfile = '/home/s0710509/log/sandboxlate.log' if -d '/home/s0710509/log';
+
 my $json = JSON::XS->new->pretty->utf8;
 my @common_opts = (
     path  => [],
@@ -78,7 +81,7 @@ sub dispatch_root {
 sub main {
     my($env) = @_;
 
-    if(open my $fh, '>>', '/tmp/sandboxlate.log') {
+    if(defined $logfile and open my $fh, '>>', $logfile) {
         $env->{'psgi.errors'} = $fh;
     }
 
@@ -103,6 +106,8 @@ sub to_app {
             root => './htdocs/';
 
         enable 'Plack::Middleware::AccessLog';
+
+        enable 'Plack::Middleware::JSONP';
 
         \&main;
     };

@@ -77,6 +77,11 @@ sub dispatch_root {
 
 sub main {
     my($env) = @_;
+
+    if(open my $fh, '>>', '/tmp/sandboxlate.log') {
+        $env->{'psgi.errors'} = $fh;
+    }
+
     my $req = Plack::Request->new($env);
     given($env->{PATH_INFO}) {
         when ('/') {
@@ -96,6 +101,8 @@ sub to_app {
         enable 'Plack::Middleware::Static',
             path => qr{^/static/},
             root => './htdocs/';
+
+        enable 'Plack::Middleware::AccessLog';
 
         \&main;
     };

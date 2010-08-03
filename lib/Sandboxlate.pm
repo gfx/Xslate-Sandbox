@@ -5,12 +5,12 @@ use warnings;
 
 our $VERSION = '0.01';
 
-use Router::Simple::Sinatraish;
+use Text::Xslate;
 
 use Plack::Builder;
 use Plack::Request;
+
 use JSON::XS;
-use Text::Xslate;
 use Try::Tiny;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Section::Simple qw/get_data_section/;

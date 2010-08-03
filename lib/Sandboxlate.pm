@@ -79,11 +79,14 @@ sub main {
     my($env) = @_;
     my $req = Plack::Request->new($env);
     given($env->{PATH_INFO}) {
+        when ('/') {
+            return dispatch_root($req);
+        }
         when ('/api') {
             return dispatch_api($req);
         }
         default {
-            return dispatch_root($req);
+            return [404, [], ['not found']];
         }
     }
 }

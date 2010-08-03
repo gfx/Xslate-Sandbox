@@ -114,7 +114,7 @@ __DATA__
         $(function () {
             $('#TestForm').submit(function () {
                 $.ajax({
-                    url: '/api',
+                    url: './api',
                     data: {
                         template: $('#template').val(),
                         vars: $('#vars').val(),

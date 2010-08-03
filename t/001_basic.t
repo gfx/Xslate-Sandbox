@@ -8,7 +8,9 @@ use HTTP::Request;
 use JSON::XS qw(decode_json encode_json);
 use Text::Xslate qw(uri_escape);
 
-my $app = Plack::Util::load_psgi('xslate.psgi');
+use Sandboxlate;
+
+my $app = Sandboxlate->to_app;
 
 my @set = (
     ['Hello, <: $lang :> world!', { lang => 'Xslate' }, 'Hello, Xslate world!'],
@@ -24,7 +26,7 @@ test_psgi
         foreach my $d(@set) {
             my($in, $vars, $expect, $syntax) = @$d;
             my $req = HTTP::Request->new(
-                GET => "http://localhost/hello?"
+                GET => "http://localhost/api?"
                     . "template=" . uri_escape($in) . ";"
                     . "vars=" . uri_escape(encode_json($vars)) . ";"
                     . "syntax=" . ($syntax || '') . ";"

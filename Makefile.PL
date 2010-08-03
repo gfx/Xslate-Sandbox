@@ -2,7 +2,7 @@
 use strict;
 use inc::Module::Install;
 
-all_from 'xslate.psgi';
+all_from 'lib/Sandboxlate.pm';
 
 requires 'Text::Xslate' => 0.1052;
 requires 'Plack'        => 0.9943;

@@ -1,4 +1,4 @@
-#!psgi
+#!perl
 # Parameters: syntax="TTerse"|"Kolon", template=$src, vars=\%vars
 package Sandboxlate;
 use 5.008_001;
@@ -15,9 +15,14 @@ use Try::Tiny;
 use Time::HiRes qw(gettimeofday tv_interval);
 
 my $json = JSON::XS->new->pretty->utf8;
+my @common_opts = (
+    path  => [],
+    cache => 0,
+);
+
 my %renderers = (
-    tterse => Text::Xslate->new( syntax => 'TTerse' ),
-    kolon  => Text::Xslate->new( syntax => 'Kolon' ),
+    tterse => Text::Xslate->new( syntax => 'TTerse', @common_opts ),
+    kolon  => Text::Xslate->new( syntax => 'Kolon',  @common_opts ),
 );
 my $supported_renderer_re = do {
     my $re = join( '|', keys %renderers);

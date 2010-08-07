@@ -15,6 +15,13 @@ use Try::Tiny;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Section::Simple qw/get_data_section/;
 
+use BSD::Resource;
+
+use constant {
+    MAX_MEMORY => 1 * (10 ** 20),
+    MAX_CPU    => 1,
+};
+
 my $logfile;
 $logfile = '/home/s0710509/log/sandboxlate.log' if -d '/home/s0710509/log';
 
@@ -39,8 +46,14 @@ sub dispatch_api {
     my($req) = @_;
 
     my %response;
+    my $t0     = [gettimeofday()];
+
     try {
-        alarm(1);
+        #local $SIG{ALRM} = sub { die "TIMEOUT\n" };
+        alarm(MAX_CPU);
+
+        setrlimit(RLIMIT_AS,  MAX_MEMORY / 2, MAX_MEMORY) or die "setrlimit(RLIMIT_AS) failed";
+
         my $syntax = lc($req->param('syntax') || 'Kolon');
         if ($syntax !~ /^$supported_renderer_re$/) {
             die "Syntax $syntax is not supported";
@@ -50,19 +63,19 @@ sub dispatch_api {
         my $template = $req->param('template') || '';
         my $renderer = $renderers{ $syntax };
 
-        my $t0     = [gettimeofday()];
         my $result = $renderer->render_string( $template, $vars );
-        my $t1     = [gettimeofday()];
 
         $response{ status }  = 1;
         $response{ message } = "rendered successfully";
         $response{ result }  = $result;
-        $response{ time }    = tv_interval($t0, $t1);
     } catch {
         s/ at \s+ \S+ \s+ line \s+ \d+ //xmsg;
         $response{ message } = "An error occurred: $_";
         $response{ status } = 0;
     };
+
+    my $t1            = [gettimeofday()];
+    $response{ time } = tv_interval($t0, $t1);
 
     return [
         200,

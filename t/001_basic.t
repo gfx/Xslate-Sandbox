@@ -3,14 +3,15 @@ use strict;
 use Test::More;
 
 use Plack::Test;
+
 use Plack::Util;
 use HTTP::Request;
 use JSON::XS qw(decode_json encode_json);
 use Text::Xslate qw(uri_escape);
 
-use Sandboxlate;
+use XslateSandbox;
 
-my $app = Sandboxlate->to_app;
+my $app = XslateSandbox->to_app();
 
 my @set = (
     ['Hello, <: $lang :> world!', { lang => 'Xslate' }, 'Hello, Xslate world!'],

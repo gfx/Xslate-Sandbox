@@ -1,0 +1,879 @@
+127.0.0.1 - - [05/11月/2010 22:59:41] "GET / HTTP/1.1" 200 1748 "-" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 22:59:44] "GET /api?template=Hello%2C+%3C%3A+%24lang+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 120 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8902c40)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x88519c0)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8851c40)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8851e20)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x860fc40)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x89025e0)', 'Try::Tiny::Catch=REF(0x8549c38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x882c118)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x882c228)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8549bd8)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x864c2f8)', 'HASH(0x884c838)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8822c80)', 'HASH(0x884c838)', 'IO::Socket::INET=GLOB(0x85d4a78)', 'CODE(0x864c2f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8822c80)', 'CODE(0x8851350)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8822c80)', 'CODE(0x8851350)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8549c18)', 'CODE(0x8851350)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x8551708)', 'Plack::Handler::Standalone=HASH(0x8549c18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8427e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x9087bc0)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8fd69c8)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8fd6c48)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8fd6e28)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8d94c40)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x9087560)', 'Try::Tiny::Catch=REF(0x8ccec28)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8fb1108)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8fb1218)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8ccebc8)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8dd12e8)', 'HASH(0x8fd1828)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8fa7c80)', 'HASH(0x8fd1828)', 'IO::Socket::INET=GLOB(0x8d59a68)', 'CODE(0x8dd12e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8fa7c80)', 'CODE(0x8fd6358)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8fa7c80)', 'CODE(0x8fd6358)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8ccec08)', 'CODE(0x8fd6358)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x8cd6708)', 'Plack::Handler::Standalone=HASH(0x8ccec08)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8bace38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x9171bd0)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x90c09f0)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x90c0c70)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x90c0e50)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8e7ec40)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x9171570)', 'Try::Tiny::Catch=REF(0x8db8c38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x909b118)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x909b228)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8db8bd8)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8ebb2f8)', 'HASH(0x90bb850)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x9091c80)', 'HASH(0x90bb850)', 'IO::Socket::INET=GLOB(0x8e43a78)', 'CODE(0x8ebb2f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x9091c80)', 'CODE(0x90c0380)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x9091c80)', 'CODE(0x90c0380)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8db8c18)', 'CODE(0x90c0380)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x8dc0708)', 'Plack::Handler::Standalone=HASH(0x8db8c18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8c96e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x9a92c70)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x99e1a08)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99e1c88)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x99e1e68)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x979fc40)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x9a92610)', 'Try::Tiny::Catch=REF(0x96d9c38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x99bc118)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99bc228)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x96d9bd8)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x97dc2f8)', 'HASH(0x99dc880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x99b2c80)', 'HASH(0x99dc880)', 'IO::Socket::INET=GLOB(0x9764a78)', 'CODE(0x97dc2f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x96d9c18)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x96e1708)', 'Plack::Handler::Standalone=HASH(0x96d9c18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x95b7e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+127.0.0.1 - - [05/11月/2010 23:07:10] "GET / HTTP/1.1" 200 1761 "-" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x9c6e630)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x99e1a08)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99e1c88)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x99e1e68)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x979fc40)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x9a92e30)', 'Try::Tiny::Catch=REF(0x9ad0250)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x99bc118)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99bc228)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x96d9bd8)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x97dc2f8)', 'HASH(0x9ad0390)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x99b2c80)', 'HASH(0x9ad0390)', 'IO::Socket::INET=GLOB(0x99e1438)', 'CODE(0x97dc2f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x96d9c18)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x96e1708)', 'Plack::Handler::Standalone=HASH(0x96d9c18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x95b7e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x9acfea0)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x99e1a08)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99e1c88)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x99e1e68)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x979fc40)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x9a92500)', 'Try::Tiny::Catch=REF(0x9a84938)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x99bc118)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x99bc228)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x96d9bd8)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x97dc2f8)', 'HASH(0x99ba618)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x99b2c80)', 'HASH(0x99ba618)', 'IO::Socket::INET=GLOB(0x9e34878)', 'CODE(0x97dc2f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x99b2c80)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x96d9c18)', 'CODE(0x99e1398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x96e1708)', 'Plack::Handler::Standalone=HASH(0x96d9c18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x95b7e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8f66c70)') called at lib/XslateSandbox.pm line 113
+	XslateSandbox::main('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8eb5a08)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8eb5c88)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8eb5e68)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8c73c40)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8f66610)', 'Try::Tiny::Catch=REF(0x8badc38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8e90118)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8e90228)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8badbd8)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8cb02f8)', 'HASH(0x8eb0880)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8e86c80)', 'HASH(0x8eb0880)', 'IO::Socket::INET=GLOB(0x8c38a78)', 'CODE(0x8cb02f8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8e86c80)', 'CODE(0x8eb5398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8e86c80)', 'CODE(0x8eb5398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8badc18)', 'CODE(0x8eb5398)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x8bb5708)', 'Plack::Handler::Standalone=HASH(0x8badc18)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8a8be38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8950d08)') called at lib/XslateSandbox.pm line 114
+	XslateSandbox::main('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x889fb80)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x889fe00)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x889ffe0)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x865dc40)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x89506a8)', 'Try::Tiny::Catch=REF(0x8597c48)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x887a128)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x887a238)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8597be8)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x869a308)', 'HASH(0x889ab38)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8870c80)', 'HASH(0x889ab38)', 'IO::Socket::INET=GLOB(0x8622a88)', 'CODE(0x869a308)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8870c80)', 'CODE(0x889f510)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8870c80)', 'CODE(0x889f510)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8597c28)', 'CODE(0x889f510)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x859f708)', 'Plack::Handler::Standalone=HASH(0x8597c28)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8475e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+127.0.0.1 - - [05/11月/2010 23:09:54] "GET / HTTP/1.1" 200 1767 "-" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x90e27b0)') called at lib/XslateSandbox.pm line 114
+	XslateSandbox::main('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x9031ba8)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x9031e28)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x9032008)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8defc40)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x90e6648)', 'Try::Tiny::Catch=REF(0x90e27d0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x900c128)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x900c238)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8d29be8)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8e2c308)', 'HASH(0x8defe30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x9002c80)', 'HASH(0x8defe30)', 'IO::Socket::INET=GLOB(0x8db48b8)', 'CODE(0x8e2c308)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x9002c80)', 'CODE(0x9031538)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x9002c80)', 'CODE(0x9031538)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8d29c28)', 'CODE(0x9031538)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader.pm line 83
+	Plack::Loader::run('Plack::Loader=HASH(0x8d31708)', 'Plack::Handler::Standalone=HASH(0x8d29c28)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8c07e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+127.0.0.1 - - [05/11月/2010 23:11:09] "GET / HTTP/1.1" 200 1767 "-" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d31870)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d2ef20)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d2f1a0)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d2f380)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8a3e838)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d32240)', 'Try::Tiny::Catch=REF(0x8d31890)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d11b50)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d11c60)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8d2f440)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8a7cf08)', 'HASH(0x8d20520)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'HASH(0x8d20520)', 'IO::Socket::INET=GLOB(0x8d20420)', 'CODE(0x8a7cf08)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8a3eaf8)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x884fe38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8c313b8)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d2ef20)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d2f1a0)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d2f380)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8a3e838)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8b42158)', 'Try::Tiny::Catch=REF(0x8d32380)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d11b50)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d11c60)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8d2f440)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8a7cf08)', 'HASH(0x8d20490)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'HASH(0x8d20490)', 'IO::Socket::INET=GLOB(0x8d20430)', 'CODE(0x8a7cf08)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8a3eaf8)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x884fe38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d8e918)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d2ef20)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d2f1a0)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d2f380)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8a3e838)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d91f68)', 'Try::Tiny::Catch=REF(0x8d91ff8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d11b50)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d11c60)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8d2f440)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8a7cf08)', 'HASH(0x8d91fa8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'HASH(0x8d91fa8)', 'IO::Socket::INET=GLOB(0x8d31ee0)', 'CODE(0x8a7cf08)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8a3eaf8)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x884fe38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d204c0)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d2ef20)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d2f1a0)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d2f380)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8a3e838)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8f2e980)', 'Try::Tiny::Catch=REF(0x8f2ccf8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d11b50)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d11c60)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/ContentLength.pm line 10
+	Plack::Middleware::ContentLength::call('Plack::Middleware::ContentLength=HASH(0x8d2f440)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8a7cf08)', 'HASH(0x8d32010)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 144
+	HTTP::Server::PSGI::handle_connection('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'HASH(0x8d32010)', 'IO::Socket::INET=GLOB(0x8f52848)', 'CODE(0x8a7cf08)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 105
+	HTTP::Server::PSGI::accept_loop('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/HTTP/Server/PSGI.pm line 59
+	HTTP::Server::PSGI::run('HTTP::Server::PSGI=HASH(0x8b4bdf0)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/HTTP/Server/PSGI.pm line 14
+	Plack::Handler::HTTP::Server::PSGI::run('Plack::Handler::Standalone=HASH(0x8a3eaf8)', 'CODE(0x8d2e8b0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x896f448)', 'Plack::Handler::Standalone=HASH(0x8a3eaf8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x884fe38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+127.0.0.1 - - [05/11月/2010 23:13:50] "GET /api?template=Hello%2C+%3C%3A+%22Foo%22+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 116 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 23:14:04] "GET /api?template=Hello%2C+%3C%3A+%22Foo%22+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 116 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 23:14:05] "GET /api?template=Hello%2C+%3C%3A+%22Foo%22+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 117 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 23:14:07] "GET /api?template=Hello%2C+%3C%3A+%22Foo%22+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 117 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 23:14:08] "GET /api?template=Hello%2C+%3C%3A+%22Foo%22+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 117 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d16260)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8cfee28)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cff0a8)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8cff288)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b52b00)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8cff888)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8cf9e18)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cf9f28)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d08af0)', 'HASH(0x8cff4d8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8cff4d8)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d08af0)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d16270)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8cfee28)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cff0a8)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8cff288)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b52b00)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8cff898)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8cf9e18)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cf9f28)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d08af0)', 'HASH(0x8cff4e8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8cff4e8)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d08af0)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d16230)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8cfee28)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cff0a8)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8cff288)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b52b00)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8cff858)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8cf9e18)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cf9f28)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d08af0)', 'HASH(0x8cff4a8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8cff4a8)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d08af0)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d16290)') called at lib/XslateSandbox.pm line 115
+	XslateSandbox::main('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8cfee28)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cff0a8)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8cff288)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b52b00)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8cff8b8)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8cf9e18)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8cf9f28)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d08af0)', 'HASH(0x8cff508)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8cff508)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d08af0)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d08af0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 56
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3edc0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e0f0)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e370)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e550)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b7d8)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3eb00)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f28)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a038)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53b70)', 'HASH(0x8d3e740)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e740)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53b70)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3edd0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e0f0)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e370)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e550)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b7d8)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3eb10)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f28)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a038)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53b70)', 'HASH(0x8d3e750)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e750)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53b70)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ede0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e0f0)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e370)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e550)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b7d8)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3eb20)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f28)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a038)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53b70)', 'HASH(0x8d3e770)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e770)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53b70)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53b70)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3f0a0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e3d0)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e650)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e830)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b4d8)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3ede0)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39e58)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d39f68)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53a80)', 'HASH(0x8d3ea20)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3ea20)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53a80)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3f0b0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e3d0)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e650)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e830)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b4d8)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3edf0)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39e58)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d39f68)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53a80)', 'HASH(0x8d3ea30)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3ea30)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53a80)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3f0c0)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3e3d0)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e650)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e830)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b4d8)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3ee00)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39e58)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d39f68)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53a80)', 'HASH(0x8d3ea50)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3ea50)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53a80)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53a80)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+127.0.0.1 - - [05/11月/2010 23:18:54] "GET /api?template=Hello%2C+%3C%3A+42+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 116 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+127.0.0.1 - - [05/11月/2010 23:18:58] "GET /api?template=Hello%2C+%3C%3A+42+%3A%3E+world!&vars=%7B%22lang%22%3A%22Xslate%22%7D&syntax=Kolon HTTP/1.1" 200 116 "http://localhost:5000/" "Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.12) Gecko/20101027 Ubuntu/10.04 (lucid) Firefox/3.6.12"
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ec08)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3df38)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e1b8)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e398)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b638)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e948)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f00)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a010)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d52f40)', 'HASH(0x8d3e588)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e588)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d52f40)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ec18)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3df38)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e1b8)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e398)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b638)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e958)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f00)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a010)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d52f40)', 'HASH(0x8d3e598)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e598)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d52f40)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('Use of uninitialized value $_ in substitution (s///) at lib/XslateSandbox.pm line 77.^J') called at lib/XslateSandbox.pm line 77
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ec28)') called at lib/XslateSandbox.pm line 119
+	XslateSandbox::main('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3df38)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e1b8)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e398)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b638)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e968)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d39f00)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a010)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d52f40)', 'HASH(0x8d3e5b8)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e5b8)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d52f40)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d52f40)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('No such signal: SIGARLM at lib/XslateSandbox.pm line 52, <DATA> line 204.^J') called at lib/XslateSandbox.pm line 52
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3e7c8)') called at lib/XslateSandbox.pm line 120
+	XslateSandbox::main('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3daf8)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3dd78)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3df58)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b628)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e508)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d3a948)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3aa58)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53878)', 'HASH(0x8d3e148)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e148)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53878)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('No such signal: SIGARLM at lib/XslateSandbox.pm line 52, <DATA> line 204.^J') called at lib/XslateSandbox.pm line 52
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3e7d8)') called at lib/XslateSandbox.pm line 120
+	XslateSandbox::main('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3daf8)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3dd78)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3df58)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b628)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e518)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d3a948)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3aa58)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53878)', 'HASH(0x8d3e158)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e158)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53878)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('No such signal: SIGARLM at lib/XslateSandbox.pm line 52, <DATA> line 204.^J') called at lib/XslateSandbox.pm line 52
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3e7e8)') called at lib/XslateSandbox.pm line 120
+	XslateSandbox::main('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3daf8)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3dd78)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3df58)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b7b628)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3e528)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d3a948)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3aa58)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53878)', 'HASH(0x8d3e178)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e178)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53878)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53878)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('No such signal: SIGARLM at lib/XslateSandbox.pm line 52, <DATA> line 204.^J') called at lib/XslateSandbox.pm line 52
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ecc0)') called at lib/XslateSandbox.pm line 120
+	XslateSandbox::main('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3dff0)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e270)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e450)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b76770)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3ea00)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d3a050)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a160)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53958)', 'HASH(0x8d3e640)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e640)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53958)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53958)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53958)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10
+Trace begun at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 22
+	Plack::Middleware::StackTrace::__ANON__('No such signal: SIGARLM at lib/XslateSandbox.pm line 52, <DATA> line 204.^J') called at lib/XslateSandbox.pm line 52
+	XslateSandbox::dispatch_api('Plack::Request=HASH(0x8d3ecd0)') called at lib/XslateSandbox.pm line 120
+	XslateSandbox::main('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/JSONP.pm line 18
+	Plack::Middleware::JSONP::call('Plack::Middleware::JSONP=HASH(0x8d3dff0)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3e270)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Static.pm line 16
+	Plack::Middleware::Static::call('Plack::Middleware::Static=HASH(0x8d3e450)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/Lint.pm line 24
+	Plack::Middleware::Lint::call('Plack::Middleware::Lint=HASH(0x8b76770)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::__ANON__ at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 71
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x8d3ea10)', 'Try::Tiny::Catch=REF(0x89f1990)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/StackTrace.pm line 27
+	Plack::Middleware::StackTrace::call('Plack::Middleware::StackTrace=HASH(0x8d3a050)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Middleware/AccessLog.pm line 21
+	Plack::Middleware::AccessLog::call('Plack::Middleware::AccessLog=HASH(0x8d3a160)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Component.pm line 39
+	Plack::Component::__ANON__('HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	eval {...} at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Util.pm line 134
+	Plack::Util::run_app('CODE(0x8d53958)', 'HASH(0x8d3e650)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 176
+	Starlet::Server::handle_connection('Plack::Handler::Starlet=HASH(0x8b529f0)', 'HASH(0x8d3e650)', 'IO::Socket::INET=GLOB(0x8a38ce8)', 'CODE(0x8d53958)', '', '') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Starlet/Server.pm line 116
+	Starlet::Server::accept_loop('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53958)', 100) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Handler/Starlet.pm line 59
+	Plack::Handler::Starlet::run('Plack::Handler::Starlet=HASH(0x8b529f0)', 'CODE(0x8d53958)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 31
+	Plack::Loader::Restarter::_fork_and_start('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)', undef) called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Loader/Restarter.pm line 82
+	Plack::Loader::Restarter::run('Plack::Loader::Restarter=HASH(0x8922490)', 'Plack::Handler::Starlet=HASH(0x8b529f0)') called at /home/gfx/perl5/perlbrew/perls/perl-5.12.2/lib/site_perl/5.12.2/Plack/Runner.pm line 256
+	Plack::Runner::run('Plack::Runner=HASH(0x8802e38)') called at /home/gfx/perl5/perlbrew/bin/plackup line 10

@@ -2,9 +2,9 @@
 use strict;
 use inc::Module::Install;
 
-all_from 'lib/Sandboxlate.pm';
+all_from 'lib/XslateSandbox.pm';
 
-requires 'Text::Xslate' => 0.1052;
+requires 'Text::Xslate' => 0.2013;
 requires 'Plack'        => 0.9943;
 requires 'JSON::XS';
 requires 'Try::Tiny';

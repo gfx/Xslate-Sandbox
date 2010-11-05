@@ -1,7 +1,7 @@
-package Sandboxlate;
+package XslateSandbox;
 use 5.012_001;
 use strict;
-use warnings;
+use warnings FATAL => 'all';
 
 our $VERSION = '0.01';
 
@@ -11,19 +11,17 @@ use Plack::Builder;
 use Plack::Request;
 
 use JSON::XS;
-use Try::Tiny;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Section::Simple qw/get_data_section/;
 
 use BSD::Resource;
 
 use constant {
-    MAX_MEMORY => 1 * (10 ** 20),
-    MAX_CPU    => 1,
+    MAX_MEMORY => 50 * (2 ** 20), # MiB
+    MAX_CPU    => 1,              # sec
 };
 
 my $logfile;
-$logfile = '/home/s0710509/log/sandboxlate.log' if -d '/home/s0710509/log';
 
 my $json = JSON::XS->new->pretty->utf8;
 my @common_opts = (
@@ -48,39 +46,52 @@ sub dispatch_api {
     my %response;
     my $t0     = [gettimeofday()];
 
-    try {
-        #local $SIG{ALRM} = sub { die "TIMEOUT\n" };
+    eval {
+        local $SIG{ARLM} = sub {
+            die  "TIMEOUT\n";
+        };
         alarm(MAX_CPU);
 
-        setrlimit(RLIMIT_AS,  MAX_MEMORY / 2, MAX_MEMORY) or die "setrlimit(RLIMIT_AS) failed";
+        setrlimit(RLIMIT_AS,  MAX_MEMORY, MAX_MEMORY * 2)
+            or die "setrlimit(RLIMIT_AS) failed";
+
+        #setrlimit(RLIMIT_CPU,  MAX_CPU, MAX_CPU * 2)
+        #    or die "setrlimit(RLIMIT_CPU) failed";
 
         my $syntax = lc($req->param('syntax') || 'Kolon');
         if ($syntax !~ /^$supported_renderer_re$/) {
             die "Syntax $syntax is not supported";
         }
 
-        my $vars = $json->decode($req->param('vars') || '{}');
+        my $vars     = $json->decode($req->param('vars') || '{}');
         my $template = $req->param('template') || '';
         my $renderer = $renderers{ $syntax };
 
         my $result = $renderer->render_string( $template, $vars );
 
-        $response{ status }  = 1;
         $response{ message } = "rendered successfully";
         $response{ result }  = $result;
-    } catch {
+        $response{ status }  = 1;
+    };
+    if($@) {
+        warn 'error: ', $@;
         s/ at \s+ \S+ \s+ line \s+ \d+ //xmsg;
-        $response{ message } = "An error occurred: $_";
-        $response{ status } = 0;
+        $response{ message } = "An error occurred: $@";
+        $response{ status }  = 0;
     };
 
     my $t1            = [gettimeofday()];
     $response{ time } = tv_interval($t0, $t1);
 
+    my $content = $json->encode(\%response);
+
     return [
         200,
-        [ "Content-Type" => "application/json" ],
-        [ $json->encode( \%response ) ]
+        [
+            "Content-Type" => "application/json",
+            "Content-Length" => length($content),
+        ],
+        [ $content ]
     ];
 }
 
@@ -88,7 +99,8 @@ sub dispatch_root {
     my ($req) = @_;
     my $html = $data_section->{'index.html'} || die;
     return [200,
-        ['Content-Type' => 'text/html;charset=utf-8', 'Content-Length' => length($html)],
+        ['Content-Type' => 'text/html;charset=utf-8',
+         'Content-Length' => length($html)],
         [$html]
     ];
 }
@@ -115,6 +127,10 @@ sub main {
 }
 
 sub to_app {
+    my($class, $home) = @_;
+
+    $logfile = "$home/access.log" if defined $home;
+
     builder {
         enable 'Plack::Middleware::Static',
             path => qr{^/static/},
@@ -144,14 +160,14 @@ __DATA__
                     url: './api',
                     data: {
                         template: $('#template').val(),
-                        vars: $('#vars').val(),
-                        syntax: $('#syntax').val()
+                        vars:     $('#vars').val(),
+                        syntax:   $('#syntax').val()
                     },
                     success: function (x) {
                         $('#result').text(x);
                     },
-                    error: function () {
-                        alert("API ERROR");
+                    error: function (x) {
+                        $('#result').text("API ERROR");
                     },
                     dataType: 'text'
                 });

@@ -2,6 +2,7 @@ package XslateSandbox;
 use 5.012_001;
 use strict;
 use warnings FATAL => 'all';
+use utf8;
 
 our $VERSION = '0.01';
 
@@ -10,7 +11,8 @@ use Text::Xslate;
 use Plack::Builder;
 use Plack::Request;
 
-use JSON::XS;
+use Encode qw(decode_utf8 encode_utf8);
+use JSON::XS qw(encode_json decode_json);
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Section::Simple qw/get_data_section/;
 
@@ -23,7 +25,6 @@ use constant {
 
 my $logfile;
 
-my $json = JSON::XS->new->pretty->utf8;
 my @common_opts = (
     path  => [],
     cache => 0,
@@ -62,8 +63,8 @@ sub dispatch_api {
             die "Syntax $syntax is not supported";
         }
 
-        my $vars     = $json->decode($req->param('vars') || '{}');
-        my $template = $req->param('template') || '';
+        my $vars     = decode_json($req->param('vars') || '{}');
+        my $template = decode_utf8( $req->param('template') || '' );
         my $renderer = $renderers{ $syntax };
 
         my $result = $renderer->render_string( $template, $vars );
@@ -81,7 +82,7 @@ sub dispatch_api {
     my $t1            = [gettimeofday()];
     $response{ time } = tv_interval($t0, $t1);
 
-    my $content = $json->encode(\%response);
+    my $content = encode_json(\%response);
 
     return [
         200,
@@ -162,12 +163,14 @@ __DATA__
                         syntax:   $('#syntax').val()
                     },
                     success: function (x) {
-                        $('#result').text(x);
+                        $('#result').text(x.result);
+                        $('#message').text(x.message);
+                        $('#time').text(x.time);
                     },
-                    error: function (x) {
+                    error: function () {
                         $('#result').text("API ERROR");
                     },
-                    dataType: 'text'
+                    dataType: 'json'
                 });
                 return false;
             });
@@ -180,23 +183,33 @@ __DATA__
         templte:<br />
         <textarea name="template" id="template" cols="80">Hello, <: $lang :> world!</textarea>
         <br />
-        vars(in JSON):<br />
+        vars (in JSON):<br />
         <textarea name="vars" id="vars" cols="80">{"lang":"Xslate"}</textarea>
         <br />
-        syntax:<br />
+        <br />
+        syntax:
         <select name="syntax" id="syntax">
             <option name="Kolon">Kolon</option>
             <option name="TTerse">TTerse</option>
         </select>
-        <br />
         <input type="submit" value="send" />
     </form>
     <hr />
-    result:<br />
-    </p>
+
+    result:
     <div id="result" style="bordor: solid 1px black"></div>
+    <br />
+
+    message:
+    <div id="message" style="bordor: solid 1px black"></div>
+    <br />
+
+    time:
+    <div id="time" style="bordor: solid 1px black"></div>
+    <br />
     <hr />
-    <address><a href="http://xslate.org">http://xslate.org</a></address>
+
+    <address><a href="http://xslate.org">xslate.org</a></address>
 </body>
 </html>
 

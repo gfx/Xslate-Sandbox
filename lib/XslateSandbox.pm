@@ -47,16 +47,15 @@ sub dispatch_api {
     my $t0     = [gettimeofday()];
 
     eval {
-        local $SIG{ARLM} = sub {
+        local $SIG{XCPU} = sub {
             die  "TIMEOUT\n";
         };
-        alarm(MAX_CPU);
 
         setrlimit(RLIMIT_AS,  MAX_MEMORY, MAX_MEMORY * 2)
             or die "setrlimit(RLIMIT_AS) failed";
 
-        #setrlimit(RLIMIT_CPU,  MAX_CPU, MAX_CPU * 2)
-        #    or die "setrlimit(RLIMIT_CPU) failed";
+        setrlimit(RLIMIT_CPU,  MAX_CPU, MAX_CPU * 2)
+            or die "setrlimit(RLIMIT_CPU) failed";
 
         my $syntax = lc($req->param('syntax') || 'Kolon');
         if ($syntax !~ /^$supported_renderer_re$/) {
@@ -74,11 +73,10 @@ sub dispatch_api {
         $response{ status }  = 1;
     };
     if($@) {
-        warn 'error: ', $@;
-        s/ at \s+ \S+ \s+ line \s+ \d+ //xmsg;
+        $@ =~ s/ at \s+ \S+ \s+ line \s+ \d+ //xmsg;
         $response{ message } = "An error occurred: $@";
         $response{ status }  = 0;
-    };
+    }
 
     my $t1            = [gettimeofday()];
     $response{ time } = tv_interval($t0, $t1);

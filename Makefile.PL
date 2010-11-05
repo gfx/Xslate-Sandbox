@@ -7,7 +7,6 @@ all_from 'lib/XslateSandbox.pm';
 requires 'Text::Xslate' => 0.2013;
 requires 'Plack'        => 0.9943;
 requires 'JSON::XS';
-requires 'Try::Tiny';
 requires 'Time::HiRes';
 requires 'BSD::Resource';
 

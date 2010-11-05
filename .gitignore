@@ -12,3 +12,5 @@ MANIFEST
 *.bak
 nytprof*
 cover_db*
+*.log
+

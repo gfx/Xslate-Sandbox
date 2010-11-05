@@ -135,8 +135,6 @@ sub to_app {
             path => qr{^/static/},
             root => './htdocs/';
 
-        enable 'Plack::Middleware::AccessLog';
-
         enable 'Plack::Middleware::JSONP';
 
         \&main;

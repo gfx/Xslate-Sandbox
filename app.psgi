@@ -10,6 +10,7 @@ use Plack::Builder;
 
 builder {
     enable 'Plack::Middleware::AccessLog';
+    enable 'Plack::Middlle::StackTrace';
 
     XslateSandbox->to_app();
 };

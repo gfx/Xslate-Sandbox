@@ -20,7 +20,7 @@ use BSD::Resource;
 
 use constant {
     MAX_MEMORY => 50 * (2 ** 20), # MiB
-    MAX_CPU    => 1,              # sec
+    MAX_CPU    => 2,              # sec
 };
 
 my $logfile;

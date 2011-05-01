@@ -3,6 +3,7 @@
 use strict;
 use File::Basename qw(dirname);
 use lib dirname(__FILE__) . '/lib';
+use lib::xi;
 
 use XslateSandbox;
 

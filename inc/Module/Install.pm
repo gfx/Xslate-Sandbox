@@ -31,7 +31,7 @@ BEGIN {
 	# This is not enforced yet, but will be some time in the next few
 	# releases once we can make sure it won't clash with custom
 	# Module::Install extensions.
-	$VERSION = '1.00';
+	$VERSION = '1.01';
 
 	# Storage for the pseudo-singleton
 	$MAIN    = undef;
@@ -156,10 +156,10 @@ END_DIE
 sub autoload {
 	my $self = shift;
 	my $who  = $self->_caller;
-	my $cwd  = Cwd::cwd();
+	my $cwd  = Cwd::getcwd();
 	my $sym  = "${who}::AUTOLOAD";
 	$sym->{$cwd} = sub {
-		my $pwd = Cwd::cwd();
+		my $pwd = Cwd::getcwd();
 		if ( my $code = $sym->{$pwd} ) {
 			# Delegate back to parent dirs
 			goto &$code unless $cwd eq $pwd;
@@ -239,7 +239,7 @@ sub new {
 
 	# ignore the prefix on extension modules built from top level.
 	my $base_path = Cwd::abs_path($FindBin::Bin);
-	unless ( Cwd::abs_path(Cwd::cwd()) eq $base_path ) {
+	unless ( Cwd::abs_path(Cwd::getcwd()) eq $base_path ) {
 		delete $args{prefix};
 	}
 	return $args{_self} if $args{_self};
@@ -338,7 +338,7 @@ sub find_extensions {
 		if ( $subpath eq lc($subpath) || $subpath eq uc($subpath) ) {
 			my $content = Module::Install::_read($subpath . '.pm');
 			my $in_pod  = 0;
-			foreach ( split //, $content ) {
+			foreach ( split /\n/, $content ) {
 				$in_pod = 1 if /^=\w/;
 				$in_pod = 0 if /^=cut/;
 				next if ($in_pod || /^=cut/);  # skip pod text
@@ -467,4 +467,4 @@ sub _CLASS ($) {
 
 1;
 
-# Copyright 2008 - 2010 Adam Kennedy.
+# Copyright 2008 - 2011 Adam Kennedy.

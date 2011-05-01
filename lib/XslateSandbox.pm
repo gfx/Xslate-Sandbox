@@ -107,10 +107,6 @@ sub dispatch_root {
 sub main {
     my($env) = @_;
 
-    if(defined $logfile and open my $fh, '>>', $logfile) {
-        $env->{'psgi.errors'} = $fh;
-    }
-
     my $req = Plack::Request->new($env);
     given($env->{PATH_INFO}) {
         when ('/') {
@@ -127,8 +123,6 @@ sub main {
 
 sub to_app {
     my($class, $home) = @_;
-
-    $logfile = "$home/access.log" if defined $home;
 
     builder {
         enable 'Plack::Middleware::Static',

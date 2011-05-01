@@ -63,7 +63,7 @@ sub dispatch_api {
             die "Syntax $syntax is not supported";
         }
 
-        my $vars     = decode_json($req->param('vars') || '{}');
+        my $vars     = decode_json( $req->param('vars')     || '{}' );
         my $template = decode_utf8( $req->param('template') || '' );
         my $renderer = $renderers{ $syntax };
 
@@ -195,15 +195,15 @@ __DATA__
     <hr />
 
     result:
-    <div id="result" style="bordor: solid 1px black"></div>
+    <div id="result" style="bordor: solid 1px black; white-space: pre"></div>
     <br />
 
     message:
-    <div id="message" style="bordor: solid 1px black"></div>
+    <div id="message" style="bordor: solid 1px black; white-space: pre"></div>
     <br />
 
     time:
-    <div id="time" style="bordor: solid 1px black"></div>
+    <div id="time" style="bordor: solid 1px black; white-space: pre"></div>
     <br />
     <hr />
 

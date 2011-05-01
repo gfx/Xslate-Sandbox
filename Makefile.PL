@@ -4,9 +4,9 @@ use inc::Module::Install;
 
 all_from 'lib/XslateSandbox.pm';
 
-requires 'lib::xi';
 requires 'Text::Xslate' => 0.2013;
 requires 'Plack'        => 0.9943;
+requires 'Data::Section::Simple';
 requires 'JSON::XS';
 requires 'Time::HiRes';
 requires 'BSD::Resource';

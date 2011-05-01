@@ -52,11 +52,11 @@ sub dispatch_api {
             die  "TIMEOUT\n";
         };
 
-        setrlimit(RLIMIT_AS,  MAX_MEMORY, MAX_MEMORY * 2)
-            or die "setrlimit(RLIMIT_AS) failed";
+#        setrlimit(RLIMIT_AS,  MAX_MEMORY, MAX_MEMORY * 2)
+#            or die "setrlimit(RLIMIT_AS) failed";
 
-        setrlimit(RLIMIT_CPU,  MAX_CPU, MAX_CPU * 2)
-            or die "setrlimit(RLIMIT_CPU) failed";
+#        setrlimit(RLIMIT_CPU,  MAX_CPU, MAX_CPU * 2)
+#            or die "setrlimit(RLIMIT_CPU) failed";
 
         my $syntax = lc($req->param('syntax') || 'Kolon');
         if ($syntax !~ /^$supported_renderer_re$/) {
